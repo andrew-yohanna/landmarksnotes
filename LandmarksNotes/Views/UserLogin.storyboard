@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Login View Controller-->
+        <scene sceneID="n8j-Ic-qBD">
+            <objects>
+                <viewController storyboardIdentifier="UserLogin" id="NoN-Fn-5Ci" customClass="UserLoginViewController" customModule="LandmarksNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yTf-nx-3cm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ah6-LZ-sRt">
+                                <rect key="frame" x="107" y="592" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="o84-0I-5l6"/>
+                                    <constraint firstAttribute="width" constant="200" id="zVR-MX-Cat"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N05-hJ-PaJ">
+                                <rect key="frame" x="157" y="662" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Qma-SK-J5a"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="login:" destination="NoN-Fn-5Ci" eventType="touchUpInside" id="Vez-mw-nHo"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TigerSpikeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="dCA-4O-2Nb">
+                                <rect key="frame" x="62" y="404" width="290" height="88"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dCA-4O-2Nb" firstAttribute="centerX" secondItem="yTf-nx-3cm" secondAttribute="centerX" id="51R-0O-2EE"/>
+                            <constraint firstItem="N05-hJ-PaJ" firstAttribute="centerX" secondItem="yTf-nx-3cm" secondAttribute="centerX" id="fT9-0p-gM6"/>
+                            <constraint firstItem="dCA-4O-2Nb" firstAttribute="centerY" secondItem="yTf-nx-3cm" secondAttribute="centerY" id="gI2-md-oFH"/>
+                            <constraint firstItem="N05-hJ-PaJ" firstAttribute="top" secondItem="ah6-LZ-sRt" secondAttribute="bottom" constant="20" id="jfm-kB-zn7"/>
+                            <constraint firstItem="ah6-LZ-sRt" firstAttribute="centerX" secondItem="yTf-nx-3cm" secondAttribute="centerX" id="vht-gn-2wq"/>
+                            <constraint firstItem="ah6-LZ-sRt" firstAttribute="top" secondItem="dCA-4O-2Nb" secondAttribute="bottom" constant="100" id="z7h-Jj-rOM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pah-5o-T0P"/>
+                    </view>
+                    <connections>
+                        <outlet property="userNameTextField" destination="ah6-LZ-sRt" id="k5j-IV-TMe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6kW-nu-Uhp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="TigerSpikeLogo" width="290" height="88"/>
+    </resources>
+</document>
