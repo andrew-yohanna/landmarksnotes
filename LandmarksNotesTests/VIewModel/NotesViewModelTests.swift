@@ -31,7 +31,6 @@ class NotesViewModelTests: XCTestCase {
     }
 
     override func tearDown() {
-        sut = nil
         isOnNoteAddedCallbackCalled = false
         isOnNotesFilteredCallbackCalled = false
         repoMock.isAddCalled = false
