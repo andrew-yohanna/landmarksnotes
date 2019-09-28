@@ -7,7 +7,7 @@ I used MVVM-C with Repository pattern
 Coordinators are the entry point for any logical flow.
 Usually the coordinator would have: 
 * `UINavigationController`: that allows it to push view controllers to a navigation stack
-* `start func`: that starts the flow
+* `func start()`: that starts the flow
 
 In this project there was the UserLoginCoordinator that needed a parent `UIViewController` instead of a `UINavigationController` as it appears modally
 
