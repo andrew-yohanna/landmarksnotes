@@ -1,4 +1,4 @@
-# landmarksnotes
+# Landmarks Notes
 
 ## Architecture
 I used MVVM-C with Repository pattern
