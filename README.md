@@ -3,7 +3,7 @@
 ## Architecture
 I used MVVM-C with Repository pattern
 
-**Coordinator**
+**Coordinator**  
 Coordinators are the entry point for any logical flow.
 Usually the coordinator would have: 
 * `UINavigationController`: that allows it to push view controllers to a navigation stack
@@ -11,7 +11,7 @@ Usually the coordinator would have:
 
 In this project there was the UserLoginCoordinator that needed a parent `UIViewController` instead of a `UINavigationController` as it appears modally
 
-**Repository**
+**Repository**  
 Repository pattern is used here to handle the data layer. In this challenge it was simply saving in a local variable.
 Having this pattern allows us to add any additional logic to handle the data; whether locally on the device, or through apis.
 
