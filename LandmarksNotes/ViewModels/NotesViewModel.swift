@@ -33,6 +33,8 @@ class NotesViewModel: NSObject {
     
     var onNoteAdded: (() -> Void)?
     var onNotesFiltered: (() -> Void)?
+    var onErrorAddingNote: ((String) -> Void)?
+    var updateLocationLoadingStatus: ((Bool) -> Void)?
 
     init(with repository: LandmarksNotesRepositoryProtocol = LandmarksNotesRepository.shared,
          userStore: UserStoreProtocol = UserStore.shared,
@@ -49,13 +51,18 @@ class NotesViewModel: NSObject {
     func add(note: String) {
         currentNoteToAdd = note
         locationManager.requestLocation()
+        self.updateLocationLoadingStatus?(true)
     }
 }
 
 extension NotesViewModel: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        
+        self.updateLocationLoadingStatus?(false)
+
+        guard let location = locations.last else {
+            // Show error
+            return
+        }
         self.repository.add(landmarkNote: LandmarkNote(userName: userStore.userName, note: currentNoteToAdd, location: location.coordinate, address: ""))
         
         // Clear note field
@@ -65,7 +72,9 @@ extension NotesViewModel: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        // TODO: Handle error
+        self.updateLocationLoadingStatus?(false)
+        // TODO: Handle error types messages
+        self.onErrorAddingNote?("Sorry, we couldn't obtain your location")
     }
 }
 

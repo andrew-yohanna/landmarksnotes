@@ -15,6 +15,7 @@
 		3010942B233A1310005647B1 /* LandmarkNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3010942A233A1310005647B1 /* LandmarkNote.swift */; };
 		3010942E233A239C005647B1 /* LandmarksNotesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3010942D233A239C005647B1 /* LandmarksNotesRepository.swift */; };
 		30109430233A2571005647B1 /* NotesMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3010942F233A2571005647B1 /* NotesMapCoordinator.swift */; };
+		302AEE222341C1620019E6B2 /* UIViewController+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302AEE212341C1620019E6B2 /* UIViewController+Toast.swift */; };
 		303548D7233B9D39003F8133 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 303548D6233B9D39003F8133 /* Map.storyboard */; };
 		30C94BE7233CDA380086D884 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C94BE6233CDA380086D884 /* UserStore.swift */; };
 		30C94BE9233CDBA30086D884 /* UserLoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C94BE8233CDBA30086D884 /* UserLoginCoordinator.swift */; };
@@ -66,6 +67,7 @@
 		3010942A233A1310005647B1 /* LandmarkNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkNote.swift; sourceTree = "<group>"; };
 		3010942D233A239C005647B1 /* LandmarksNotesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarksNotesRepository.swift; sourceTree = "<group>"; };
 		3010942F233A2571005647B1 /* NotesMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesMapCoordinator.swift; sourceTree = "<group>"; };
+		302AEE212341C1620019E6B2 /* UIViewController+Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Toast.swift"; sourceTree = "<group>"; };
 		303548D6233B9D39003F8133 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		30C94BE6233CDA380086D884 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		30C94BE8233CDBA30086D884 /* UserLoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginCoordinator.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				30C94C03233F528A0086D884 /* UIViewController+Keyboard.swift */,
+				302AEE212341C1620019E6B2 /* UIViewController+Toast.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				3010942B233A1310005647B1 /* LandmarkNote.swift in Sources */,
 				30C94BE7233CDA380086D884 /* UserStore.swift in Sources */,
 				30109430233A2571005647B1 /* NotesMapCoordinator.swift in Sources */,
+				302AEE222341C1620019E6B2 /* UIViewController+Toast.swift in Sources */,
 				30C94BF5233CEBA60086D884 /* NotesListCoordinator.swift in Sources */,
 				30C94C04233F528A0086D884 /* UIViewController+Keyboard.swift in Sources */,
 				3010942E233A239C005647B1 /* LandmarksNotesRepository.swift in Sources */,
@@ -559,6 +563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89A39A4283;
 				INFOPLIST_FILE = LandmarksNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -577,6 +582,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89A39A4283;
 				INFOPLIST_FILE = LandmarksNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -12,7 +12,9 @@ import MapKit
 class NotesMapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var noteTextField: UITextField!
-
+    @IBOutlet weak var addNoteButton: UIButton!
+    @IBOutlet weak var buttonLoadingIndicator: UIActivityIndicatorView!
+    
     var viewModel: NotesViewModel!
     var logout: (() -> Void)?
 
@@ -29,6 +31,8 @@ class NotesMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.onNoteAdded = onNoteAdded
+        viewModel.onErrorAddingNote = onErrorAddingNote
+        viewModel.updateLocationLoadingStatus = updateLocationLoadingStatus
         setupMapView()
         setupNotesTextField()
         handleKeyboardToggling()
@@ -73,8 +77,31 @@ extension NotesMapViewController {
     }
     
     func onNoteAdded() {
-        // TODO: Show a toast
-        self.populateMapAnnotations()
-        noteTextField.text = viewModel.currentNoteToAdd
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.populateMapAnnotations()
+            self.noteTextField.text = self.viewModel.currentNoteToAdd
+            self.showToast(message: "Note added successfully")
+        }
     }
+    
+    func updateLocationLoadingStatus(isLoadingLocation :Bool) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            if isLoadingLocation {
+                self.buttonLoadingIndicator.startAnimating()
+                self.addNoteButton.isEnabled = false
+            } else {
+                self.buttonLoadingIndicator.stopAnimating()
+                self.addNoteButton.isEnabled = true
+            }
+        }
+    }
+    
+    func onErrorAddingNote(with errorMessage: String) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.showToast(message: errorMessage)
+        }
+    }   
 }
